@@ -21,13 +21,17 @@ const tabDesc: Array<any> = [
 })
 export class FileUploadSectionComponent {
   name = 'File Upload';
-  currentHeading = 'Simple';
   doc = doc;
   tabs: any = tabDesc;
+  codeTabs = ['Markup', 'TypeScript', 'Backend Demo'];
+  activeOuterIndex = 0;
+  activeCodeTab = 'Markup';
 
-  select(e: any): void {
-    if (e.heading) {
-      this.currentHeading = e.heading;
-    }
+  selectOuter(index: number): void {
+    this.activeOuterIndex = index;
+  }
+
+  selectCodeTab(tab: string): void {
+    this.activeCodeTab = tab;
   }
 }
